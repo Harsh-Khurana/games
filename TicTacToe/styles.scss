@@ -1,0 +1,89 @@
+// VARIABLES
+$color-grey-light : #fafafa;
+$color-dark: #20232a;
+$color-blue: #61dafb;
+
+@mixin lineBreak {
+    border-radius: 1rem;
+    background-color: $color-dark;
+    position: absolute;
+}
+
+// NORMALIZING CSS
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: $color-dark;
+}
+.message{
+    margin: 4rem 1rem;
+    text-align: center;
+    color: $color-blue;
+    font-size: 1.2rem;
+    @media only screen and (min-width:650px) {
+        margin: 0;
+        margin-top: 1.5rem;
+    }
+}
+#board{
+    border-radius: .5rem;
+    height: 50%;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-grey-light;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @media only screen and (min-width:650px) {
+        height: 70%;
+        width: 65%;
+    }
+    @media only screen and (min-width:800px) {
+        height: 70%;
+        width: 50%;
+    }
+
+    // BLOCK STYLES
+    .block{
+        height: 6.3rem;
+        color: $color-blue;
+        font-size: 6rem;
+        text-align: center;
+        @media only screen and (min-width:650px) {
+            font-size: 8rem;
+            height: 8.8rem;
+        }
+    }
+    
+    // LINE BREAKS
+    .line-hr{
+        height: 5px;
+        width: 95%;
+        @include lineBreak();
+        left: 2.5%
+    }
+    .line-vr{
+        height: 95%;
+        width: 5px;
+        @include lineBreak();
+        top: 2.5%;
+    }
+    #line-hr-1{
+        top: 33%;
+    }
+    #line-hr-2{
+        top: 66%;
+    }
+    #line-vr-1{
+        left: 33%;
+    }
+    #line-vr-2{
+        left: 66%;
+    }
+
+}

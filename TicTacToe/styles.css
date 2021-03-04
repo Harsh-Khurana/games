@@ -1,0 +1,103 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #20232a;
+}
+
+.message {
+  margin: 4rem 1rem;
+  text-align: center;
+  color: #61dafb;
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 650px) {
+  .message {
+    margin: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+#board {
+  border-radius: .5rem;
+  height: 50%;
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fafafa;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (min-width: 650px) {
+  #board {
+    height: 70%;
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #board {
+    height: 70%;
+    width: 50%;
+  }
+}
+
+#board .block {
+  height: 6.3rem;
+  color: #61dafb;
+  font-size: 6rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 650px) {
+  #board .block {
+    font-size: 8rem;
+    height: 8.8rem;
+  }
+}
+
+#board .line-hr {
+  height: 5px;
+  width: 95%;
+  border-radius: 1rem;
+  background-color: #20232a;
+  position: absolute;
+  left: 2.5%;
+}
+
+#board .line-vr {
+  height: 95%;
+  width: 5px;
+  border-radius: 1rem;
+  background-color: #20232a;
+  position: absolute;
+  top: 2.5%;
+}
+
+#board #line-hr-1 {
+  top: 33%;
+}
+
+#board #line-hr-2 {
+  top: 66%;
+}
+
+#board #line-vr-1 {
+  left: 33%;
+}
+
+#board #line-vr-2 {
+  left: 66%;
+}
+/*# sourceMappingURL=styles.css.map */
