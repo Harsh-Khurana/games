@@ -1,13 +1,5 @@
 // VARIABLES
-$color-grey-light : #fafafa;
-$color-dark: #20232a;
-$color-blue: #61dafb;
-
-@mixin lineBreak {
-    border-radius: 1rem;
-    background-color: $color-dark;
-    position: absolute;
-}
+$color-dark: #202020;
 
 // NORMALIZING CSS
 *, *::before, *::after{
@@ -17,73 +9,95 @@ $color-blue: #61dafb;
 }
 body{
     background-color: $color-dark;
-}
-.message{
-    margin: 4rem 1rem;
     text-align: center;
-    color: $color-blue;
-    font-size: 1.2rem;
-    @media only screen and (min-width:650px) {
-        margin: 0;
-        margin-top: 1.5rem;
-    }
-}
-#board{
-    border-radius: .5rem;
-    height: 50%;
-    width: 80%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $color-grey-light;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    @media only screen and (min-width:650px) {
-        height: 70%;
-        width: 65%;
-    }
-    @media only screen and (min-width:800px) {
-        height: 70%;
-        width: 50%;
-    }
-
-    // BLOCK STYLES
-    .block{
-        height: 6.3rem;
-        color: $color-blue;
-        font-size: 6rem;
-        text-align: center;
-        @media only screen and (min-width:650px) {
-            font-size: 8rem;
-            height: 8.8rem;
+    #info{
+        margin-top: 2rem;
+        #player1{
+            color:lightgreen;
+        }
+        #player2{
+            color:lightskyblue;
         }
     }
-    
-    // LINE BREAKS
-    .line-hr{
-        height: 5px;
-        width: 95%;
-        @include lineBreak();
-        left: 2.5%
+}
+#info{
+    span{
+        transition: all .5s;
+        display: inline-block;
+        z-index: 100;
     }
-    .line-vr{
-        height: 95%;
-        width: 5px;
-        @include lineBreak();
-        top: 2.5%;
+}
+main{
+    width: 30rem;
+    height: 30rem;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem black;
+    @media only screen and (max-width: 600px){
+        width: 20rem;
+        height: 20rem;
     }
-    #line-hr-1{
-        top: 33%;
+    @media only screen and (max-height: 600px){
+        width: 15rem;
+        height: 15rem;
     }
-    #line-hr-2{
-        top: 66%;
-    }
-    #line-vr-1{
-        left: 33%;
-    }
-    #line-vr-2{
-        left: 66%;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
+    div{
+        height: 33%;
+        width: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+    }
+    hr{
+        position: absolute;
+        background-color: black;
+        &.horizontal{
+            height: 3px;
+            width: 95%;
+        }
+        &#horizontal-1{
+            top: 33.33%;
+        }
+        &#horizontal-2{
+            top: 66.66%;
+        }
+        &.vertical{
+            width: 3px;
+            height: 95%;
+        }
+        &#vertical-1{
+            left: 33.33%;
+        }
+        &#vertical-2{
+            left: 66.66%;
+        }
+
+    }
+}
+a{
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    visibility: hidden;
+}
+.winner{
+    transform: scale(2, 2);
+}
+.loser{
+    transform: scale(0, 0);
+    opacity: 0;
 }

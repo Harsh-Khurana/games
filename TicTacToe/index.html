@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="message">Player 1 &rarr; X , Player 2 &rarr; O<br>Player 1 makes the first move</div>
-    <section id="board">
-        <div class="block" id="block-00"></div>
-        <div class="block" id="block-01"></div>
-        <div class="block" id="block-02"></div>
-        <div class="block" id="block-10"></div>
-        <div class="block" id="block-11"></div>
-        <div class="block" id="block-12"></div>
-        <div class="block" id="block-20"></div>
-        <div class="block" id="block-21"></div>
-        <div class="block" id="block-22"></div>
-        <!-- line breaks horizontal and vertical -->
-        <div class="line-hr" id="line-hr-1">&nbsp;</div>
-        <div class="line-hr" id="line-hr-2">&nbsp;</div>
-        <div class="line-vr" id="line-vr-1">&nbsp;</div>
-        <div class="line-vr" id="line-vr-2">&nbsp;</div>
-    </section>
-    
+    <p id="info"><span id="player1">Player 1(X)</span> &nbsp; <span id="player2">Player 2(O)</span></p>
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <hr class="horizontal" id="horizontal-1">
+        <hr class="horizontal" id="horizontal-2">
+        <hr class="vertical" id="vertical-1">
+        <hr class="vertical" id="vertical-2">
+    </main>
+    <a href="/">Try Again <span>&#8634;</span></a>
     <script src="script.js"></script>
 </body>
 </html>

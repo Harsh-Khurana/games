@@ -6,98 +6,134 @@
 }
 
 body {
-  background-color: #20232a;
-}
-
-.message {
-  margin: 4rem 1rem;
+  background-color: #202020;
   text-align: center;
-  color: #61dafb;
-  font-size: 1.2rem;
 }
 
-@media only screen and (min-width: 650px) {
-  .message {
-    margin: 0;
-    margin-top: 1.5rem;
-  }
+body #info {
+  margin-top: 2rem;
 }
 
-#board {
-  border-radius: .5rem;
-  height: 50%;
-  width: 80%;
+body #info #player1 {
+  color: lightgreen;
+}
+
+body #info #player2 {
+  color: lightskyblue;
+}
+
+#info span {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  display: inline-block;
+  z-index: 100;
+}
+
+main {
+  width: 30rem;
+  height: 30rem;
+  background-color: white;
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #fafafa;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 2rem black;
+          box-shadow: 0 0 2rem black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@media only screen and (min-width: 650px) {
-  #board {
-    height: 70%;
-    width: 65%;
+@media only screen and (max-width: 600px) {
+  main {
+    width: 20rem;
+    height: 20rem;
   }
 }
 
-@media only screen and (min-width: 800px) {
-  #board {
-    height: 70%;
-    width: 50%;
+@media only screen and (max-height: 600px) {
+  main {
+    width: 15rem;
+    height: 15rem;
   }
 }
 
-#board .block {
-  height: 6.3rem;
-  color: #61dafb;
-  font-size: 6rem;
-  text-align: center;
+main div {
+  height: 33%;
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 5rem;
 }
 
-@media only screen and (min-width: 650px) {
-  #board .block {
-    font-size: 8rem;
-    height: 8.8rem;
-  }
+main hr {
+  position: absolute;
+  background-color: black;
 }
 
-#board .line-hr {
-  height: 5px;
+main hr.horizontal {
+  height: 3px;
   width: 95%;
-  border-radius: 1rem;
-  background-color: #20232a;
-  position: absolute;
-  left: 2.5%;
 }
 
-#board .line-vr {
+main hr#horizontal-1 {
+  top: 33.33%;
+}
+
+main hr#horizontal-2 {
+  top: 66.66%;
+}
+
+main hr.vertical {
+  width: 3px;
   height: 95%;
-  width: 5px;
-  border-radius: 1rem;
-  background-color: #20232a;
+}
+
+main hr#vertical-1 {
+  left: 33.33%;
+}
+
+main hr#vertical-2 {
+  left: 66.66%;
+}
+
+a {
   position: absolute;
-  top: 2.5%;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  visibility: hidden;
 }
 
-#board #line-hr-1 {
-  top: 33%;
+.winner {
+  -webkit-transform: scale(2, 2);
+          transform: scale(2, 2);
 }
 
-#board #line-hr-2 {
-  top: 66%;
-}
-
-#board #line-vr-1 {
-  left: 33%;
-}
-
-#board #line-vr-2 {
-  left: 66%;
+.loser {
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0;
 }
 /*# sourceMappingURL=styles.css.map */
